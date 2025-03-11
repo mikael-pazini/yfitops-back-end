@@ -2,10 +2,13 @@ import express from "express";
 import cors from "cors";
 import { db } from "./api/connect.js";
 import path from "path";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const __dirname = path.resolve();
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 app.use(cors());
 
